@@ -1,16 +1,19 @@
 backend:
     functions:
-        - entry: index.mjs
-          name: express-getting-started-function
-          path: ./
+        - entry: app.js
+          handler: handler
+          name: express
+          path: .
           type: httpServer
     language:
         name: js
-        packageManager: npm
-    path: ./
+        runtime: nodejs20.x
+    path: .
     scripts:
         deploy:
             - npm install
-name: app-genezio
-region: eu-west-1
+        local:
+            - npm install
+name: lgbts
+region: us-east-1
 yamlVersion: 2
